@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from app.api.deps import get_db, get_current_user
+from api.deps import get_db, get_current_user
 from app.schemas.profile import ProfileOut, TopicStat
-from app.services.stats_service import get_user_totals, topic_stats
+from services.stats_service import get_user_totals, topic_stats
 
 router = APIRouter(prefix="/api/profile", tags=["profile"])
 

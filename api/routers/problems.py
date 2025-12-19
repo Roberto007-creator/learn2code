@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.api.deps import get_db, get_current_user
+from api.deps import get_db, get_current_user
 from app.schemas.problems import ProblemOut
-from app.services.problems_service import list_problems, get_problem
-from app.services.events_service import log_event
+from services.problems_service import list_problems, get_problem
+from services.events_service import log_event
 
 router = APIRouter(prefix="/api/problems", tags=["problems"])
 

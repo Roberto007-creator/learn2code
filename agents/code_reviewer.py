@@ -1,9 +1,9 @@
 import ast
 from sqlalchemy.orm import Session
-from app.agents.base import BaseAgent, AgentResult
-from app.agents.llm import LLMMessage
-from app.agents.prompts import CODE_REVIEW_SYSTEM
-from app.agents.parse import parse_scores
+from agents.base import BaseAgent, AgentResult
+from agents.llm import LLMMessage
+from agents.prompts import CODE_REVIEW_SYSTEM
+from agents.parse import parse_scores
 from app.db.models import CodeReview, Submission
 
 

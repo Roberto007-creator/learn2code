@@ -6,18 +6,18 @@ from sqlalchemy.orm import Session
 from sqlalchemy import select
 
 from app.db.init_db import create_tables, seed_problems_from_json
-from app.api.deps import get_db, get_current_user
+from api.deps import get_db, get_current_user
 from app.db.models import User, Submission
 from app.core.security import create_access_token, hash_password
 
-from app.api.routers import auth, problems, submissions, profile, agents
-from app.services.problems_service import list_problems, get_problem
-from app.services.submissions_service import create_submission
-from app.services.events_service import log_event
+from api.routers import auth, problems, submissions, profile, agents
+from services.problems_service import list_problems, get_problem
+from services.submissions_service import create_submission
+from services.events_service import log_event
 
-from app.agents.code_reviewer import CodeReviewerAgent
-from app.agents.algorithm_mentor import AlgorithmMentorAgent
-from app.agents.llm import DummyLLMClient, OpenAICompatibleClient
+from agents.code_reviewer import CodeReviewerAgent
+from agents.algorithm_mentor import AlgorithmMentorAgent
+from agents.llm import DummyLLMClient, OpenAICompatibleClient
 from app.core.config import settings
 
 

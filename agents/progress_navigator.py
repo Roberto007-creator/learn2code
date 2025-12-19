@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
-from app.agents.base import BaseAgent, AgentResult
-from app.agents.llm import LLMMessage
-from app.agents.prompts import NAVIGATOR_SYSTEM
-from app.services.stats_service import topic_stats
+from agents.base import BaseAgent, AgentResult
+from agents.llm import LLMMessage
+from agents.prompts import NAVIGATOR_SYSTEM
+from services.stats_service import topic_stats
 
 
 class ProgressNavigatorAgent(BaseAgent):
