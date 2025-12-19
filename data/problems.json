@@ -1,0 +1,26 @@
+[
+  {
+    "id": "two_sum",
+    "title": "Two Sum",
+    "topic": "arrays",
+    "difficulty": "easy",
+    "statement": "Дан массив nums и число target. Верни индексы двух элементов, сумма которых равна target.",
+    "examples": "nums=[2,7,11,15], target=9 -> [0,1]"
+  },
+  {
+    "id": "valid_parentheses",
+    "title": "Valid Parentheses",
+    "topic": "stack",
+    "difficulty": "easy",
+    "statement": "Дана строка из скобок ()[]{}. Определи, является ли она валидной.",
+    "examples": "\"()[]{}\" -> true, \"(]\" -> false"
+  },
+  {
+    "id": "binary_search",
+    "title": "Binary Search",
+    "topic": "binary_search",
+    "difficulty": "easy",
+    "statement": "Дан отсортированный массив и target. Верни индекс target или -1.",
+    "examples": "nums=[-1,0,3,5,9,12], target=9 -> 4"
+  }
+]

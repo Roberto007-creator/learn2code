@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/static/styles.css">
+  <title>{{ problem.title }}</title>
+</head>
+<body class="wrap">
+  <p><a href="/">← Назад</a></p>
+
+  <h1>{{ problem.title }}</h1>
+  <div class="card">
+    <div class="muted">{{ problem.topic }} | {{ problem.difficulty }}</div>
+    <pre class="statement">{{ problem.statement }}</pre>
+    <pre class="statement">{{ problem.examples }}</pre>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <h2>Решение</h2>
+      <form method="get" action="/mentor/{{ problem.id }}">
+        <button type="submit">Подсказки Mentor</button>
+      </form>
+    </div>
+
+    <form method="post" action="/problem/{{ problem.id }}/submit">
+      <label>Язык</label>
+      <select name="language">
+        <option value="python">python</option>
+      </select>
+
+      <label>Время (сек), если хочешь</label>
+      <input name="time_spent_sec" type="number" value="0" />
+
+      <label>Код</label>
+      <textarea name="code" rows="16" required></textarea>
+
+      <button type="submit">Отправить + Code Review</button>
+    </form>
+  </div>
+
+  {% if mentor %}
+  <div class="card">
+    <h2>Algorithm Mentor</h2>
+    <pre class="statement">{{ mentor }}</pre>
+  </div>
+  {% endif %}
+
+  {% if review %}
+  <div class="card">
+    <h2>Code Reviewer</h2>
+    <pre class="statement">{{ review }}</pre>
+  </div>
+  {% endif %}
+</body>
+</html>

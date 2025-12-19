@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/static/styles.css">
+  <title>Register</title>
+</head>
+<body class="wrap">
+  <h1>Регистрация</h1>
+  <form method="post" action="/register">
+    <label>Email</label>
+    <input name="email" type="email" required />
+    <label>Username</label>
+    <input name="username" required />
+    <label>Password</label>
+    <input name="password" type="password" required />
+    <button type="submit">Создать</button>
+  </form>
+  <p><a href="/login">Вход</a></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/static/styles.css">
+  <title>Dashboard</title>
+</head>
+<body class="wrap">
+  <div class="row">
+    <h1>Профиль: {{ username }}</h1>
+    <form method="post" action="/api/auth/logout">
+      <button type="submit">Выйти</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Статистика</h2>
+    <p>Попыток: {{ total_attempts }} | Решено: {{ total_solved }}</p>
+    <div class="row">
+      <form method="get" action="/navigator">
+        <button type="submit">План от Progress Navigator</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Задачи</h2>
+    <ul>
+      {% for p in problems %}
+        <li>
+          <a href="/problem/{{ p.id }}">{{ p.title }}</a>
+          <span class="muted">({{ p.topic }}, {{ p.difficulty }})</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
