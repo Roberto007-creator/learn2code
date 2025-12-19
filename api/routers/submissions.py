@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import select
-from app.api.deps import get_db, get_current_user
+from api.deps import get_db, get_current_user
 from app.schemas.submissions import SubmissionCreateIn, SubmissionOut, SubmissionStatusIn
-from app.services.submissions_service import create_submission, list_user_submissions, set_submission_status
-from app.services.problems_service import get_problem
-from app.services.events_service import log_event
+from services.submissions_service import create_submission, list_user_submissions, set_submission_status
+from services.problems_service import get_problem
+from services.events_service import log_event
 from app.db.models import Submission
 
 router = APIRouter(prefix="/api/submissions", tags=["submissions"])

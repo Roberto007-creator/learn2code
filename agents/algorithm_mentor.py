@@ -1,6 +1,6 @@
-from app.agents.base import BaseAgent, AgentResult
-from app.agents.llm import LLMMessage
-from app.agents.prompts import MENTOR_SYSTEM
+from agents.base import BaseAgent, AgentResult
+from agents.llm import LLMMessage
+from agents.prompts import MENTOR_SYSTEM
 
 
 class AlgorithmMentorAgent(BaseAgent):
